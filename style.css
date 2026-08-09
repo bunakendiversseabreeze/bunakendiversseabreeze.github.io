@@ -50,6 +50,11 @@ a { color: inherit; }
 }
 .eyebrow-dark { color: var(--reef-teal); opacity: 1; }
 
+.section-intro {
+  max-width: 62ch;
+  color: #3A473F;
+}
+
 .btn {
   display: inline-block;
   padding: 0.85em 1.6em;
@@ -118,7 +123,7 @@ a { color: inherit; }
 }
 .brand em { font-style: italic; color: var(--coral); }
 .brand-mark { color: var(--reef-teal); }
-.site-nav nav { display: flex; gap: 1.5em; flex-wrap: wrap; }
+.site-nav nav { display: flex; gap: 1.3em; flex-wrap: wrap; }
 .site-nav nav a {
   text-decoration: none;
   font-size: 0.92rem;
@@ -133,10 +138,23 @@ a { color: inherit; }
    =========================================================== */
 .hero {
   position: relative;
-  background: linear-gradient(180deg, var(--deep-water) 0%, var(--reef-teal) 100%);
   color: var(--foam);
-  padding: 6vw 5vw 9vw;
+  padding: 8vw 5vw 9vw;
   overflow: hidden;
+  isolation: isolate;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center 65%;
+  z-index: -2;
+}
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(13,59,54,0.82) 0%, rgba(13,59,54,0.55) 45%, rgba(13,59,54,0.85) 100%);
+  z-index: -1;
 }
 .hero-copy { max-width: 640px; }
 .hero h1 {
@@ -145,7 +163,7 @@ a { color: inherit; }
 }
 .hero-sub {
   font-size: 1.05rem;
-  color: rgba(253, 251, 246, 0.88);
+  color: rgba(253, 251, 246, 0.92);
   max-width: 520px;
 }
 .hero-wave {
@@ -159,43 +177,82 @@ a { color: inherit; }
 .hero-wave path { fill: var(--foam); }
 
 /* ===========================================================
-   About + signature readout
+   About
    =========================================================== */
 .about {
   display: grid;
   grid-template-columns: 1.3fr 1fr;
   gap: 4vw;
-  padding: 5vw 5vw 6vw;
+  padding: 5vw 5vw 5vw;
   align-items: start;
 }
 .about-copy h2 { font-size: clamp(1.6rem, 2.8vw, 2.2rem); color: var(--deep-water); }
 .about-copy p { color: #3A473F; max-width: 52ch; }
 
-.readout {
+.about-photo {
+  margin: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(22, 33, 29, 0.18);
+  border: 6px solid var(--foam);
+  outline: 1px solid #E4D8BC;
+}
+.about-photo img {
+  display: block;
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+}
+.about-photo figcaption {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--driftwood);
+  padding: 0.6em 0.2em 0.2em;
+  text-align: center;
+}
+
+/* ===========================================================
+   Signature readout strip
+   =========================================================== */
+.readout-strip {
   background: var(--deep-water);
   color: var(--sand);
-  border-radius: 8px;
-  padding: 1.6em 1.8em;
+  padding: 1.8em 5vw;
   font-family: var(--font-mono);
-  border: 1px solid rgba(242, 232, 213, 0.15);
 }
 .readout-label {
   font-size: 0.72rem;
   letter-spacing: 0.14em;
   color: var(--coral);
   margin: 0 0 1em;
+  text-align: center;
 }
-.readout dl { margin: 0; }
-.readout-row {
+.readout-grid {
+  margin: 0;
   display: flex;
-  justify-content: space-between;
-  padding: 0.55em 0;
-  border-bottom: 1px dashed rgba(242, 232, 213, 0.2);
-  font-size: 0.88rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
 }
-.readout-row:last-child { border-bottom: none; }
-.readout-row dt { opacity: 0.7; letter-spacing: 0.04em; }
-.readout-row dd { margin: 0; color: var(--foam); font-weight: 500; }
+.readout-item {
+  padding: 0.4em 1.6em;
+  border-right: 1px dashed rgba(242, 232, 213, 0.25);
+  text-align: center;
+}
+.readout-item:last-child { border-right: none; }
+.readout-item dt {
+  font-size: 0.68rem;
+  opacity: 0.65;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.3em;
+}
+.readout-item dd {
+  margin: 0;
+  color: var(--foam);
+  font-weight: 500;
+  font-size: 1.02rem;
+}
 
 /* ===========================================================
    Bungalows
@@ -217,17 +274,87 @@ a { color: inherit; }
 }
 .bungalow-card h3 { padding: 0.9em 1.2em 0; color: var(--deep-water); }
 .bungalow-card p { padding: 0 1.2em 1.3em; color: #3A473F; font-size: 0.95rem; }
-.bungalow-swatch { height: 150px; }
-.swatch-reef   { background: linear-gradient(135deg, #1B6B5F, #0D3B36); }
-.swatch-garden { background: linear-gradient(135deg, #8A6240, #5C4128); }
-.swatch-family { background: linear-gradient(135deg, #E8562E, #C43F1C); }
+.bungalow-swatch {
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+.bungalow-swatch::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(13,59,54,0.75) 0%, rgba(13,59,54,0) 55%);
+}
+.swatch-garden   { background-image: linear-gradient(135deg, #8A6240, #5C4128); }
+.swatch-standard { background-image: linear-gradient(135deg, #1B6B5F, #0D3B36); }
+.bungalow-price {
+  position: relative;
+  z-index: 1;
+  color: var(--foam);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  padding: 0.7em 0.9em;
+}
+.bungalow-price small { display: block; opacity: 0.75; font-size: 0.68rem; }
+
+/* ===========================================================
+   Restaurant band
+   =========================================================== */
+.restaurant {
+  background: var(--foam);
+  padding: 4vw 5vw;
+  border-top: 1px solid #E4D8BC;
+  border-bottom: 1px solid #E4D8BC;
+}
+.restaurant-inner { max-width: 640px; margin: 0 auto; text-align: center; }
+.restaurant h2 { color: var(--deep-water); font-size: clamp(1.4rem, 2.4vw, 1.9rem); }
+.restaurant p { color: #3A473F; }
+.restaurant .eyebrow { color: var(--reef-teal); }
 
 /* ===========================================================
    Dive centre
    =========================================================== */
 .dive-centre { background: var(--deep-water); color: var(--foam); padding: 5vw 5vw 6vw; }
 .dive-centre-inner { max-width: 900px; margin: 0 auto; }
-.dive-centre h2 { font-size: clamp(1.6rem, 2.8vw, 2.2rem); color: var(--foam); }
+.dive-centre-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.2em;
+}
+.dive-centre h2 { font-size: clamp(1.6rem, 2.8vw, 2.2rem); color: var(--foam); margin: 0; }
+
+.padi-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  border: 1px solid rgba(242, 232, 213, 0.35);
+  border-radius: 6px;
+  padding: 0.5em 0.9em;
+  flex-shrink: 0;
+}
+.padi-badge-mark {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+  color: var(--coral);
+  border: 2px solid var(--coral);
+  border-radius: 4px;
+  padding: 0.15em 0.4em;
+}
+.padi-badge-text {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  line-height: 1.3;
+  letter-spacing: 0.03em;
+  color: rgba(253, 251, 246, 0.85);
+}
+
 .feature-list {
   list-style: none;
   margin: 2em 0 0;
@@ -254,9 +381,55 @@ a { color: inherit; }
 .feature-list p { font-size: 0.9rem; color: rgba(253, 251, 246, 0.75); margin: 0; }
 
 /* ===========================================================
+   Rates
+   =========================================================== */
+.rates { padding: 5vw 5vw 6vw; }
+.rates h2 { color: var(--deep-water); font-size: clamp(1.6rem, 2.8vw, 2.2rem); }
+.rate-tables {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5em;
+  margin-top: 2em;
+}
+.rate-table h3 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--deep-water);
+  margin-bottom: 0.8em;
+}
+.rate-table h3 span {
+  display: block;
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: var(--driftwood);
+  margin-top: 0.2em;
+}
+.rate-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+.rate-table th, .rate-table td {
+  text-align: left;
+  padding: 0.65em 0.5em;
+  border-bottom: 1px solid #E4D8BC;
+}
+.rate-table th {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  color: var(--reef-teal);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.rate-table td:not(:first-child) { font-family: var(--font-mono); color: #3A473F; }
+.rate-table tbody tr:hover { background: rgba(27, 107, 95, 0.06); }
+
+/* ===========================================================
    Dive sites
    =========================================================== */
-.dive-sites { padding: 5vw 5vw 6vw; }
+.dive-sites { padding: 5vw 5vw 6vw; background: var(--sand); }
 .dive-sites h2 { color: var(--deep-water); font-size: clamp(1.6rem, 2.8vw, 2.2rem); }
 .site-log { list-style: none; margin: 2em 0 0; padding: 0; border-top: 1px solid #DDD2B8; }
 .site-log li {
@@ -269,6 +442,12 @@ a { color: inherit; }
 }
 .site-name { color: var(--deep-water); font-weight: 500; }
 .site-note { color: var(--driftwood); }
+.site-log-note {
+  margin-top: 1em;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--driftwood);
+}
 
 /* ===========================================================
    Contact
@@ -301,7 +480,10 @@ a { color: inherit; }
    =========================================================== */
 @media (max-width: 760px) {
   .about { grid-template-columns: 1fr; }
+  .about-photo img { height: 260px; }
   .site-nav nav { gap: 1em; }
+  .dive-centre-heading { flex-direction: column; align-items: flex-start; }
+  .readout-item { padding: 0.4em 1em; }
 }
 
 /* Focus visibility */
