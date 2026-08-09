@@ -1,0 +1,311 @@
+/* ===========================================================
+   Seabreeze Resort — design tokens
+   =========================================================== */
+:root {
+  --deep-water:   #0D3B36;
+  --reef-teal:    #1B6B5F;
+  --sand:         #F2E8D5;
+  --foam:         #FDFBF6;
+  --coral:        #E8562E;
+  --coral-dark:   #C43F1C;
+  --driftwood:    #8A6240;
+  --ink:          #16211D;
+
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Work Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--foam);
+  line-height: 1.55;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 0.5em;
+}
+
+p { margin: 0 0 1em; }
+
+a { color: inherit; }
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sand);
+  opacity: 0.85;
+  margin: 0 0 0.75em;
+}
+.eyebrow-dark { color: var(--reef-teal); opacity: 1; }
+
+.btn {
+  display: inline-block;
+  padding: 0.85em 1.6em;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn-coral {
+  background: var(--coral);
+  color: var(--foam);
+  box-shadow: 0 4px 14px rgba(232, 86, 46, 0.35);
+}
+.btn-coral:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(232, 86, 46, 0.4); }
+.btn-large { padding: 1.1em 2.2em; font-size: 1rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn { transition: none; }
+}
+
+/* ===========================================================
+   Maintenance banner
+   =========================================================== */
+.maintenance-banner {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--coral);
+  color: var(--foam);
+  text-align: center;
+  padding: 0.7em 1em;
+  font-size: 0.92rem;
+}
+.maintenance-banner p { margin: 0; }
+.maintenance-banner a {
+  color: var(--foam);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ===========================================================
+   Nav
+   =========================================================== */
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1em 5vw;
+  background: var(--foam);
+  flex-wrap: wrap;
+  gap: 0.75em;
+}
+.brand {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: var(--deep-water);
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+.brand em { font-style: italic; color: var(--coral); }
+.brand-mark { color: var(--reef-teal); }
+.site-nav nav { display: flex; gap: 1.5em; flex-wrap: wrap; }
+.site-nav nav a {
+  text-decoration: none;
+  font-size: 0.92rem;
+  color: var(--ink);
+  border-bottom: 1px solid transparent;
+}
+.site-nav nav a:hover { border-bottom-color: var(--coral); }
+.nav-cta { color: var(--coral) !important; font-weight: 600; }
+
+/* ===========================================================
+   Hero
+   =========================================================== */
+.hero {
+  position: relative;
+  background: linear-gradient(180deg, var(--deep-water) 0%, var(--reef-teal) 100%);
+  color: var(--foam);
+  padding: 6vw 5vw 9vw;
+  overflow: hidden;
+}
+.hero-copy { max-width: 640px; }
+.hero h1 {
+  font-size: clamp(2.1rem, 4.4vw, 3.4rem);
+  color: var(--foam);
+}
+.hero-sub {
+  font-size: 1.05rem;
+  color: rgba(253, 251, 246, 0.88);
+  max-width: 520px;
+}
+.hero-wave {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 8vw;
+  min-height: 60px;
+}
+.hero-wave path { fill: var(--foam); }
+
+/* ===========================================================
+   About + signature readout
+   =========================================================== */
+.about {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 4vw;
+  padding: 5vw 5vw 6vw;
+  align-items: start;
+}
+.about-copy h2 { font-size: clamp(1.6rem, 2.8vw, 2.2rem); color: var(--deep-water); }
+.about-copy p { color: #3A473F; max-width: 52ch; }
+
+.readout {
+  background: var(--deep-water);
+  color: var(--sand);
+  border-radius: 8px;
+  padding: 1.6em 1.8em;
+  font-family: var(--font-mono);
+  border: 1px solid rgba(242, 232, 213, 0.15);
+}
+.readout-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: var(--coral);
+  margin: 0 0 1em;
+}
+.readout dl { margin: 0; }
+.readout-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.55em 0;
+  border-bottom: 1px dashed rgba(242, 232, 213, 0.2);
+  font-size: 0.88rem;
+}
+.readout-row:last-child { border-bottom: none; }
+.readout-row dt { opacity: 0.7; letter-spacing: 0.04em; }
+.readout-row dd { margin: 0; color: var(--foam); font-weight: 500; }
+
+/* ===========================================================
+   Bungalows
+   =========================================================== */
+.bungalows { padding: 5vw 5vw 6vw; background: var(--sand); }
+.bungalows h2 { color: var(--deep-water); font-size: clamp(1.6rem, 2.8vw, 2.2rem); }
+.bungalow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.75em;
+  margin-top: 2em;
+}
+.bungalow-card {
+  background: var(--foam);
+  border-radius: 6px;
+  overflow: hidden;
+  border-top: 4px solid var(--driftwood);
+  box-shadow: 0 6px 18px rgba(22, 33, 29, 0.08);
+}
+.bungalow-card h3 { padding: 0.9em 1.2em 0; color: var(--deep-water); }
+.bungalow-card p { padding: 0 1.2em 1.3em; color: #3A473F; font-size: 0.95rem; }
+.bungalow-swatch { height: 150px; }
+.swatch-reef   { background: linear-gradient(135deg, #1B6B5F, #0D3B36); }
+.swatch-garden { background: linear-gradient(135deg, #8A6240, #5C4128); }
+.swatch-family { background: linear-gradient(135deg, #E8562E, #C43F1C); }
+
+/* ===========================================================
+   Dive centre
+   =========================================================== */
+.dive-centre { background: var(--deep-water); color: var(--foam); padding: 5vw 5vw 6vw; }
+.dive-centre-inner { max-width: 900px; margin: 0 auto; }
+.dive-centre h2 { font-size: clamp(1.6rem, 2.8vw, 2.2rem); color: var(--foam); }
+.feature-list {
+  list-style: none;
+  margin: 2em 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2em;
+}
+.feature-list li { display: flex; gap: 1em; align-items: flex-start; }
+.feature-mark {
+  font-family: var(--font-mono);
+  color: var(--coral);
+  font-size: 0.85rem;
+  border: 1px solid rgba(242, 232, 213, 0.3);
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.feature-list h3 { font-size: 1.05rem; color: var(--foam); margin-bottom: 0.2em; }
+.feature-list p { font-size: 0.9rem; color: rgba(253, 251, 246, 0.75); margin: 0; }
+
+/* ===========================================================
+   Dive sites
+   =========================================================== */
+.dive-sites { padding: 5vw 5vw 6vw; }
+.dive-sites h2 { color: var(--deep-water); font-size: clamp(1.6rem, 2.8vw, 2.2rem); }
+.site-log { list-style: none; margin: 2em 0 0; padding: 0; border-top: 1px solid #DDD2B8; }
+.site-log li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.9em 0;
+  border-bottom: 1px solid #DDD2B8;
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+}
+.site-name { color: var(--deep-water); font-weight: 500; }
+.site-note { color: var(--driftwood); }
+
+/* ===========================================================
+   Contact
+   =========================================================== */
+.contact {
+  background: var(--coral);
+  color: var(--foam);
+  text-align: center;
+  padding: 6vw 5vw;
+}
+.contact h2 { color: var(--foam); font-size: clamp(1.8rem, 3.2vw, 2.6rem); }
+.contact-sub { max-width: 480px; margin: 0 auto 1.6em; color: rgba(253, 251, 246, 0.9); }
+.contact .btn-coral { background: var(--deep-water); box-shadow: none; }
+.contact .btn-coral:hover { background: #092A26; }
+
+/* ===========================================================
+   Footer
+   =========================================================== */
+.site-footer {
+  background: var(--ink);
+  color: rgba(253, 251, 246, 0.6);
+  text-align: center;
+  padding: 2em 1em;
+  font-size: 0.82rem;
+}
+.site-footer p { margin: 0.2em 0; }
+
+/* ===========================================================
+   Responsive
+   =========================================================== */
+@media (max-width: 760px) {
+  .about { grid-template-columns: 1fr; }
+  .site-nav nav { gap: 1em; }
+}
+
+/* Focus visibility */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--coral);
+  outline-offset: 2px;
+}
