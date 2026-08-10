@@ -297,5 +297,22 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+
+  <script>
+  const banner = document.querySelector('.maintenance-banner');
+
+  if (banner) {
+      const updateBannerHeight = () => {
+          document.documentElement.style.setProperty(
+              '--banner-height',
+              `${banner.offsetHeight}px`
+          );
+      };
+
+      updateBannerHeight();
+
+      new ResizeObserver(updateBannerHeight).observe(banner);
+  }
+  </script>
 </body>
 </html>
