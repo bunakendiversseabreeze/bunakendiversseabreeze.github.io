@@ -460,6 +460,7 @@ a { color: inherit; }
 }
 .contact h2 { color: var(--foam); font-size: clamp(1.8rem, 3.2vw, 2.6rem); }
 .contact-sub { max-width: 480px; margin: 0 auto 1.6em; color: rgba(253, 251, 246, 0.9); }
+.contact-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 1em; }
 .contact .btn-coral { background: var(--deep-water); box-shadow: none; }
 .contact .btn-coral:hover { background: #092A26; }
 
