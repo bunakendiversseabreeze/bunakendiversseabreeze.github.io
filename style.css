@@ -18,7 +18,10 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--banner-height, 0px);
+}
 
 body {
   margin: 0;
@@ -132,6 +135,19 @@ a { color: inherit; }
 }
 .site-nav nav a:hover { border-bottom-color: var(--coral); }
 .nav-cta { color: var(--coral) !important; font-weight: 600; }
+
+.page-jump-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 1.25rem 2rem;
+}
+
+.page-jump-links a {
+    text-decoration: none;
+    font-weight: 600;
+}
 
 /* ===========================================================
    Hero
@@ -261,16 +277,39 @@ a { color: inherit; }
 .bungalows h2 { color: var(--deep-water); font-size: clamp(1.6rem, 2.8vw, 2.2rem); }
 .bungalow-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 1.75em;
-  margin-top: 2em;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
 }
+
 .bungalow-card {
-  background: var(--foam);
-  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
   overflow: hidden;
-  border-top: 4px solid var(--driftwood);
-  box-shadow: 0 6px 18px rgba(22, 33, 29, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bungalow-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+  color: inherit;
+}
+
+.bungalow-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.bungalow-card .card-content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 .bungalow-card h3 { padding: 0.9em 1.2em 0; color: var(--deep-water); }
 .bungalow-card p { padding: 0 1.2em 1.3em; color: #3A473F; font-size: 0.95rem; }
@@ -380,17 +419,26 @@ a { color: inherit; }
 .feature-list h3 { font-size: 1.05rem; color: var(--foam); margin-bottom: 0.2em; }
 .feature-list p { font-size: 0.9rem; color: rgba(253, 251, 246, 0.75); margin: 0; }
 
-/* ===========================================================
-   Rates
-   =========================================================== */
-.rates { padding: 5vw 5vw 6vw; }
-.rates h2 { color: var(--deep-water); font-size: clamp(1.6rem, 2.8vw, 2.2rem); }
+/* ==========================================
+   Rates Section & Rate Tables
+   ========================================== */
+
+.rates { 
+  padding: 5vw 5vw 6vw; 
+}
+
+.rates h2 { 
+  color: var(--deep-water); 
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem); 
+}
+
 .rate-tables {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2.5em;
   margin-top: 2em;
 }
+
 .rate-table h3 {
   font-family: var(--font-body);
   font-weight: 600;
@@ -398,6 +446,7 @@ a { color: inherit; }
   color: var(--deep-water);
   margin-bottom: 0.8em;
 }
+
 .rate-table h3 span {
   display: block;
   font-weight: 400;
@@ -405,16 +454,29 @@ a { color: inherit; }
   color: var(--driftwood);
   margin-top: 0.2em;
 }
+
+/* Horizontal scroll container for mobile screens */
+.table-container {
+  overflow-x: auto;
+  margin: 1em 0;
+}
+
+/* Base table styling */
 .rate-table table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.88rem;
 }
-.rate-table th, .rate-table td {
+
+/* Shared cell padding & bottom border */
+.rate-table th, 
+.rate-table td {
   text-align: left;
   padding: 0.65em 0.5em;
   border-bottom: 1px solid #E4D8BC;
 }
+
+/* Header row styling */
 .rate-table th {
   font-family: var(--font-mono);
   font-size: 0.7rem;
@@ -422,9 +484,23 @@ a { color: inherit; }
   color: var(--reef-teal);
   text-transform: uppercase;
   font-weight: 500;
+  background-color: rgba(0, 0, 0, 0.03);
 }
-.rate-table td:not(:first-child) { font-family: var(--font-mono); color: #3A473F; }
-.rate-table tbody tr:hover { background: rgba(27, 107, 95, 0.06); }
+
+/* Data cells */
+.rate-table td:not(:first-child) { 
+  font-family: var(--font-mono); 
+  color: #3A473F; 
+}
+
+/* Row states: Zebra striping and hover */
+.rate-table tbody tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.rate-table tbody tr:hover { 
+  background-color: rgba(27, 107, 95, 0.06); 
+}
 
 /* ===========================================================
    Dive sites
@@ -491,4 +567,33 @@ a { color: inherit; }
 a:focus-visible, button:focus-visible {
   outline: 2px solid var(--coral);
   outline-offset: 2px;
+}
+
+
+/* Info & Notice Boxes */
+.notice-box {
+  background-color: rgba(0, 0, 0, 0.03);
+  border-left: 4px solid #023e8a;
+  padding: 15px 20px;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
+.notice-box ul {
+  margin-left: 20px;
+}
+
+/* Photo Gallery Grids */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
 }
