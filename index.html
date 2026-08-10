@@ -1,356 +1,258 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bunaken Divers Seabreeze Resort</title>
-<meta name="description" content="Wooden shorefront bungalows and an on-site PADI dive centre on Bunaken Island, North Sulawesi — gateway to Bunaken National Marine Park.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+---
+layout: default
+title: "Home"
+description: "Wooden shorefront bungalows and an on-site PADI dive centre on Bunaken Island, North Sulawesi — gateway to Bunaken National Marine Park."
+---
 
-  <!-- MAINTENANCE BANNER -->
-  <div class="maintenance-banner" role="alert">
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg" style="background-image:url('images/seafront-view.jpg');"></div>
+  <div class="hero-scrim"></div>
+  <div class="hero-copy">
+    <p class="eyebrow">Bunaken Island · North Sulawesi, Indonesia</p>
+    <h1>Wooden bungalows on the shore.<br>A reef wall at your doorstep.</h1>
+    <p class="hero-sub">
+      Seabreeze Resort sits on the shore at the edge of Bunaken National Marine Park —
+      a small, family-run collection of wooden bungalows and an on-site PADI dive centre,
+      built for people who came for the wall, not the wifi.
+    </p>
+    <a class="btn btn-coral" href="https://wa.me/6281356409136" target="_blank" rel="noopener">
+      Message us on WhatsApp
+    </a>
+  </div>
+  <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,64 C240,110 480,10 720,48 C960,86 1200,20 1440,58 L1440,120 L0,120 Z"></path>
+  </svg>
+</section>
+
+<nav class="page-jump-links" aria-label="On this page">
+  <a href="#about">The Resort</a>
+  <a href="#bungalows">Bungalows</a>
+  <a href="#dive-centre">Dive Centre</a>
+  <a href="#rates">Rates</a>
+  <a href="#dive-sites">Dive Sites</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-copy">
+    <p class="eyebrow eyebrow-dark">The Resort</p>
+    <h2>Built from the same island you're diving</h2>
     <p>
-      <strong>Our website is under maintenance at the moment.</strong>
-      Please book directly with Diana Sulangi via WhatsApp:
-      <a href="https://wa.me/6281356409136" target="_blank" rel="noopener">+62 813-5640-9136</a>
-      or
-      <a href="https://wa.me/6285298771599" target="_blank" rel="noopener">+62 852-9877-1599</a>
+      Every bungalow at Seabreeze is raised timber-on-stilts, built by local builders
+      from Sulawesi hardwood, set within fifty metres of the water's edge.
+      There's no pool — the pool is offshore and has better visibility.
+    </p>
+    <p>
+      Bunaken's wall is famous for a reason: it drops from the shallows to well past
+      recreational limits, in a marine park that has protected it since 1991. We keep
+      our groups small, our boats close to the house reef, and our dive guides local —
+      most of them grew up diving this exact wall.
     </p>
   </div>
+  <figure class="about-photo">
+    <img src="images/welcome-sign.jpg" alt="The timber entrance gate to Seabreeze Resort, strung with red-and-white flags" loading="lazy">
+    <figcaption>The gate to Seabreeze Resort</figcaption>
+  </figure>
+</section>
 
-  <!-- NAV -->
-  <header class="site-nav">
-    <a class="brand" href="#top">
-      <span class="brand-mark" aria-hidden="true">◐</span>
-      Bunaken Divers <em>Seabreeze</em> Resort
+<!-- SIGNATURE READOUT STRIP -->
+<section class="readout-strip" aria-label="Site conditions">
+  <p class="readout-label">SEABREEZE · SITE LOG</p>
+  <dl class="readout-grid">
+    <div class="readout-item"><dt>DEPTH RANGE</dt><dd>05&ndash;40 M</dd></div>
+    <div class="readout-item"><dt>VISIBILITY</dt><dd>15&ndash;30 M</dd></div>
+    <div class="readout-item"><dt>WATER TEMP</dt><dd>27&ndash;29&deg;C</dd></div>
+    <div class="readout-item"><dt>DIVE SITES</dt><dd>30+</dd></div>
+    <div class="readout-item"><dt>COORDINATES</dt><dd>1&deg;36'N 124&deg;47'E</dd></div>
+  </dl>
+</section>
+
+<!-- BUNGALOWS -->
+<section class="bungalows" id="bungalows">
+  <p class="eyebrow eyebrow-dark">Where you'll sleep</p>
+  <h2>12 bungalows, three styles</h2>
+  <p class="section-intro">
+    Every room is ensuite and fits at least two guests, with extra beds available on
+    request. All rates include breakfast, lunch, dinner, and free tea, coffee, and
+    mineral water around the clock.
+  </p>
+  
+  <div class="bungalow-grid">
+    <a href="standard-bungalow.html" class="bungalow-card">
+      <div class="bungalow-swatch swatch-standard" style="background-image: url('images/standard-room-thumb.jpg');">
+        <span class="bungalow-price">from Rp650,000<small>/person/night</small></span>
+      </div>
+      <div class="card-content">
+        <h3>Standard Bungalow</h3>
+        <p>Four rooms under one roof, sharing a veranda. Rooms can be booked individually or together – a good, sociable option for groups diving together.</p>
+        <span class="btn">View Photos & Details →</span>
+      </div>
     </a>
-    <nav class="navbar">
-      <a href="index.html">Home</a>
-      <a href="padi-courses.html">PADI Courses</a>
-      <a href="daily-diving-rentals.html">Daily Diving & Rentals</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
 
-
-  </header>
-
-  <main id="top">
-
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-bg" style="background-image:url('images/seafront-view.jpg');"></div>
-      <div class="hero-scrim"></div>
-      <div class="hero-copy">
-        <p class="eyebrow">Bunaken Island · North Sulawesi, Indonesia</p>
-        <h1>Wooden bungalows on the shore.<br>A reef wall at your doorstep.</h1>
-        <p class="hero-sub">
-          Seabreeze Resort sits on the shore at the edge of Bunaken National Marine Park —
-          a small, family-run collection of wooden bungalows and an on-site PADI dive centre,
-          built for people who came for the wall, not the wifi.
-        </p>
-        <a class="btn btn-coral" href="https://wa.me/6281356409136" target="_blank" rel="noopener">
-          Message us on WhatsApp
-        </a>
+    <a href="garden-bungalow.html" class="bungalow-card">
+      <div class="bungalow-swatch swatch-garden" style="background-image: url('images/garden-bungalow-thumb.jpg');">
+        <span class="bungalow-price">from Rp750,000<small>/person/night</small></span>
       </div>
-      <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0,64 C240,110 480,10 720,48 C960,86 1200,20 1440,58 L1440,120 L0,120 Z"></path>
-      </svg>
-    </section>
-
-    <nav class="page-jump-links" aria-label="On this page">
-      <a href="#about">The Resort</a>
-      <a href="#bungalows">Bungalows</a>
-      <a href="#dive-centre">Dive Centre</a>
-      <a href="#rates">Rates</a>
-      <a href="#dive-sites">Dive Sites</a>
-      <a href="#contact">Contact</a>
-    </nav>
-
-    <!-- ABOUT -->
-    <section class="about" id="about">
-      <div class="about-copy">
-        <p class="eyebrow eyebrow-dark">The Resort</p>
-        <h2>Built from the same island you're diving</h2>
-        <p>
-          Every bungalow at Seabreeze is raised timber-on-stilts, built by local builders
-          from Sulawesi hardwood, set within fifty metres of the water's edge.
-          There's no pool — the pool is offshore and has better visibility.
-        </p>
-        <p>
-          Bunaken's wall is famous for a reason: it drops from the shallows to well past
-          recreational limits, in a marine park that has protected it since 1991. We keep
-          our groups small, our boats close to the house reef, and our dive guides local —
-          most of them grew up diving this exact wall.
-        </p>
+      <div class="card-content">
+        <h3>Garden Bungalow</h3>
+        <p>A standalone building with its own veranda, set back among the palms – still within earshot of the waves.</p>
+        <span class="btn">View Photos & Details →</span>
       </div>
-      <figure class="about-photo">
-        <img src="images/welcome-sign.jpg" alt="The timber entrance gate to Seabreeze Resort, strung with red-and-white flags" loading="lazy">
-        <figcaption>The gate to Seabreeze Resort</figcaption>
-      </figure>
-    </section>
+    </a>
 
-    <!-- SIGNATURE READOUT STRIP -->
-    <section class="readout-strip" aria-label="Site conditions">
-      <p class="readout-label">SEABREEZE · SITE LOG</p>
-      <dl class="readout-grid">
-        <div class="readout-item"><dt>DEPTH RANGE</dt><dd>05&ndash;40 M</dd></div>
-        <div class="readout-item"><dt>VISIBILITY</dt><dd>15&ndash;30 M</dd></div>
-        <div class="readout-item"><dt>WATER TEMP</dt><dd>27&ndash;29&deg;C</dd></div>
-        <div class="readout-item"><dt>DIVE SITES</dt><dd>30+</dd></div>
-        <div class="readout-item"><dt>COORDINATES</dt><dd>1&deg;36'N 124&deg;47'E</dd></div>
-      </dl>
-    </section>
+    <a href="seafront-bungalow.html" class="bungalow-card">
+      <div class="bungalow-swatch" style="background-image: url('images/seafront-view.jpg');">
+        <span class="bungalow-price">from Rp850,000<small>/person/night</small></span>
+      </div>
+      <div class="card-content">
+        <h3>Seafront Bungalow</h3>
+        <p>A standalone timber building with its own veranda and a sea view – you could be waking up to this view.</p>
+        <span class="btn">View Photos & Details →</span>
+      </div>
+    </a>
+  </div>
+</section>
 
-    <!-- BUNGALOWS -->
-    <section class="bungalows" id="bungalows">
-      <p class="eyebrow eyebrow-dark">Where you'll sleep</p>
-      <h2>12 bungalows, three styles</h2>
-      <p class="section-intro">
-        Every room is ensuite and fits at least two guests, with extra beds available on
-        request. All rates include breakfast, lunch, dinner, and free tea, coffee, and
-        mineral water around the clock.
+<!-- RESTAURANT -->
+<section class="restaurant">
+  <div class="restaurant-inner">
+    <p class="eyebrow">Eat &amp; connect</p>
+    <h2>Open-air restaurant, on-site wifi</h2>
+    <p>
+      Meals are cooked fresh and served in our open-air restaurant, catching
+      the breeze off the water. Wifi's on hand too, if you need to surface an email
+      between dives.
+    </p>
+  </div>
+</section>
+
+<!-- DIVE CENTRE -->
+<section class="dive-centre" id="dive-centre">
+  <div class="dive-centre-inner">
+    <p class="eyebrow">The Dive Centre</p>
+    <div class="dive-centre-heading">
+      <h2>On-site, PADI-approved, small by design</h2>
+      <span class="padi-badge" aria-label="PADI approved dive centre">
+        <span class="padi-badge-mark">PADI</span>
+        <span class="padi-badge-text">Approved<br>Dive Centre</span>
+      </span>
+    </div>
+    <ul class="feature-list">
+      <li>
+        <span class="feature-mark">01</span>
+        <div><h3>Up to four dives a day</h3><p>Three boat dives by day and a night or Mandarin dive after dark, most sites just a ten to twenty minute boat ride away.</p></div>
+      </li>
+      <li>
+        <span class="feature-mark">02</span>
+        <div><h3>Small groups</h3><p>Four to five divers per guide, so nobody's chasing a fin kick to keep up.</p></div>
+      </li>
+      <li>
+        <span class="feature-mark">03</span>
+        <div><h3>Full equipment rental</h3><p>Regulators, BCDs, and wetsuits serviced between every trip.</p></div>
+      </li>
+      <li>
+        <span class="feature-mark">04</span>
+        <div><h3>Courses for every level</h3><p>PADI courses from your first Discover Scuba dive through Open Water, Advanced, and Rescue Diver certification.</p></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- RATES -->
+<section class="rates" id="rates">
+  <p class="eyebrow eyebrow-dark">Rates</p>
+  <h2>Accommodation &amp; dive packages</h2>
+  <p class="section-intro">
+    Rates valid as of August 2026[span_1](start_span)[span_1](end_span). All figures are per person; message Diana to
+    confirm current availability and pricing.
+  </p>
+
+  <div class="rate-tables">
+    <div class="rate-table">
+      <h3>Accommodation <span>per person / night, all meals included</span></h3>
+      <table>
+        <thead>
+          <tr><th>Room</th><th>Double/twin share</th><th>Single occupancy</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Standard Bungalow</td><td>Rp650,000</td><td>Rp975,000</td></tr>
+          <tr><td>Garden Bungalow</td><td>Rp750,000</td><td>Rp1,125,000</td></tr>
+          <tr><td>Seafront Bungalow</td><td>Rp850,000</td><td>Rp1,275,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="rate-table">
+      <h3>Dive Packages <span>per person / day, incl. accommodation, meals &amp; dives</span></h3>
+      <table>
+        <thead>
+          <tr><th>Package</th><th>Share</th><th>Single</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Standard · 2 dives</td><td>Rp1,650,000</td><td>Rp1,850,000</td></tr>
+          <tr><td>Garden · 2 dives</td><td>Rp1,750,000</td><td>Rp1,950,000</td></tr>
+          <tr><td>Seafront · 2 dives</td><td>Rp1,850,000</td><td>Rp2,150,000</td></tr>
+          <tr><td>Standard Plus · 3 dives</td><td>Rp2,100,000</td><td>Rp2,300,000</td></tr>
+          <tr><td>Garden Plus · 3 dives</td><td>Rp2,200,000</td><td>Rp2,400,000</td></tr>
+          <tr><td>Seafront Plus · 3 dives</td><td>Rp2,300,000</td><td>Rp2,650,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- DIVE SITES -->
+<section class="dive-sites" id="dive-sites">
+  <p class="eyebrow eyebrow-dark">Where we dive</p>
+  <h2>30+ sites, a short boat ride away</h2>
+  <p class="section-intro">
+    We run trips to more than thirty sites around Bunaken, Manado Tua, Siladen, and Manterawu — a mix
+    of dramatic wall dives, gentler slopes, muck diving, and more. The
+    guides pick the day's sites around conditions and your interests.
+  </p>
+  <ul class="site-log">
+    <li><span class="site-name">Wall dives</span><span class="site-note">reef sharks, turtles, big schools of fusiliers</span></li>
+    <li><span class="site-name">Slopes &amp; reef</span><span class="site-note">hard &amp; soft coral gardens, mandarinfish at dusk</span></li>
+    <li><span class="site-name">House reef &amp; muck</span><span class="site-note">frogfish, nudibranchs, macro life</span></li>
+    <li><span class="site-name">Current sites</span><span class="site-note">pelagics, schooling barracuda</span></li>
+  </ul>
+  <p class="site-log-note">…and many more.</p>
+  <p class="site-log-note">Upon special arrangement and depending on availability, we can also arrange trips further afield to Bangka or the Lembeh Strait — both well worth the extra distance for divers after something different.</p>
+</section>
+
+<!-- OTHER ACTIVITIES -->
+<section id="activities" style="padding: 5vw 5vw 6vw; background: var(--foam);">
+  <p class="eyebrow eyebrow-dark">Other activities</p>
+  <h2 style="color: var(--deep-water); font-size: clamp(1.6rem, 2.8vw, 2.2rem);">Dolphin swimming tours &amp; snorkelling</h2>
+  <p class="section-intro">
+    Beyond scuba diving, there are plenty of ways to experience Bunaken's waters — whether you want an early morning offshore adventure or a relaxed swim right off the beach.
+  </p>
+
+  <div class="bungalow-grid" style="margin-top: 2em;">
+    <div class="bungalow-card" style="padding: 1.5rem; background: var(--sand); border: 1px solid rgba(0, 0, 0, 0.08);">
+      <h3 style="color: var(--deep-water); font-size: 1.15rem; margin-bottom: 0.5rem; padding: 0;">Dolphin Swimming Tours</h3>
+      <p style="color: #3A473F; font-size: 0.95rem; flex-grow: 1; padding: 0 0 1em;">
+        Head out on an early morning boat trip to meet Bunaken’s wild dolphins in open water. Watch them leap along the bow or slip into the water for an unforgettable swim with our cetacean friends.
       </p>
-      
-      <div class="bungalow-grid">
-        <!-- Standard Bungalow -->
-        <a href="standard-bungalow.html" class="bungalow-card">
-          <div class="bungalow-swatch swatch-standard" style="background-image: url('images/standard-room-thumb.jpg');">
-            <span class="bungalow-price">from Rp650,000<small>/person/night</small></span>
-          </div>
-          <div class="card-content">
-            <h3>Standard Bungalow</h3>
-            <p>Four rooms under one roof, sharing a veranda. Rooms can be booked individually or together – a good, sociable option for groups diving together.</p>
-            <span class="btn">View Photos & Details →</span>
-          </div>
-        </a>
+      <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--coral); font-weight: 500;">Rp500,000 / person</span>
+    </div>
 
-        <!-- Garden Bungalow -->
-        <a href="garden-bungalow.html" class="bungalow-card">
-          <div class="bungalow-swatch swatch-garden" style="background-image: url('images/garden-bungalow-thumb.jpg');">
-            <span class="bungalow-price">from Rp750,000<small>/person/night</small></span>
-          </div>
-          <div class="card-content">
-            <h3>Garden Bungalow</h3>
-            <p>A standalone building with its own veranda, set back among the palms – still within earshot of the waves.</p>
-            <span class="btn">View Photos & Details →</span>
-          </div>
-        </a>
-
-        <!-- Seafront Bungalow -->
-        <a href="seafront-bungalow.html" class="bungalow-card">
-          <div class="bungalow-swatch" style="background-image: url('images/seafront-view.jpg');">
-            <span class="bungalow-price">from Rp850,000<small>/person/night</small></span>
-          </div>
-          <div class="card-content">
-            <h3>Seafront Bungalow</h3>
-            <p>A standalone timber building with its own veranda and a sea view – you could be waking up to this view.</p>
-            <span class="btn">View Photos & Details →</span>
-          </div>
-        </a>
-      </div>
-      
-    </section>
-
-
-    <!-- RESTAURANT -->
-    <section class="restaurant">
-      <div class="restaurant-inner">
-        <p class="eyebrow">Eat &amp; connect</p>
-        <h2>Open-air restaurant, on-site wifi</h2>
-        <p>
-          Meals are cooked fresh and served in our open-air restaurant, catching
-          the breeze off the water. Wifi's on hand too, if you need to surface an email
-          between dives.
-        </p>
-      </div>
-    </section>
-
-    <!-- DIVE CENTRE -->
-    <section class="dive-centre" id="dive-centre">
-      <div class="dive-centre-inner">
-        <p class="eyebrow">The Dive Centre</p>
-        <div class="dive-centre-heading">
-          <h2>On-site, PADI-approved, small by design</h2>
-          <span class="padi-badge" aria-label="PADI approved dive centre">
-            <span class="padi-badge-mark">PADI</span>
-            <span class="padi-badge-text">Approved<br>Dive Centre</span>
-          </span>
-        </div>
-        <ul class="feature-list">
-          <li>
-            <span class="feature-mark">01</span>
-            <div><h3>Up to four dives a day</h3><p>Three boat dives by day and a night or Mandarin dive after dark, most sites just a ten to twenty minute boat ride away.</p></div>
-          </li>
-          <li>
-            <span class="feature-mark">02</span>
-            <div><h3>Small groups</h3><p>Four to five divers per guide, so nobody's chasing a fin kick to keep up.</p></div>
-          </li>
-          <li>
-            <span class="feature-mark">03</span>
-            <div><h3>Full equipment rental</h3><p>Regulators, BCDs, and wetsuits serviced between every trip.</p></div>
-          </li>
-          <li>
-            <span class="feature-mark">04</span>
-            <div><h3>Courses for every level</h3><p>PADI courses from your first Discover Scuba dive through Open Water, Advanced, and Rescue Diver certification.</p></div>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- RATES -->
-    <section class="rates" id="rates">
-      <p class="eyebrow eyebrow-dark">Rates</p>
-      <h2>Accommodation &amp; dive packages</h2>
-      <p class="section-intro">
-        Rates valid as of August 2026. All figures are per person; message Diana to
-        confirm current availability and pricing.
+    <div class="bungalow-card" style="padding: 1.5rem; background: var(--sand); border: 1px solid rgba(0, 0, 0, 0.08);">
+      <h3 style="color: var(--deep-water); font-size: 1.15rem; margin-bottom: 0.5rem; padding: 0;">Boat Snorkelling Trips</h3>
+      <p style="color: #3A473F; font-size: 0.95rem; flex-grow: 1; padding: 0 0 1em;">
+        Join our dive boat excursions to explore the wider marine park. Heading out by boat gives you access to far more varied and vibrant reef sites than staying near the shore.
       </p>
+      <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--coral); font-weight: 500;">Rp350,000 / person</span>
+    </div>
 
-      <div class="rate-tables">
-        <div class="rate-table">
-          <h3>Accommodation <span>per person / night, all meals included</span></h3>
-          <table>
-            <thead>
-              <tr><th>Room</th><th>Double/twin share</th><th>Single occupancy</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>Standard Bungalow</td><td>Rp650,000</td><td>Rp975,000</td></tr>
-              <tr><td>Garden Bungalow</td><td>Rp750,000</td><td>Rp1,125,000</td></tr>
-              <tr><td>Seafront Bungalow</td><td>Rp850,000</td><td>Rp1,275,000</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="rate-table">
-          <h3>Dive Packages <span>per person / day, incl. accommodation, meals &amp; dives</span></h3>
-          <table>
-            <thead>
-              <tr><th>Package</th><th>Share</th><th>Single</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>Standard · 2 dives</td><td>Rp1,650,000</td><td>Rp1,850,000</td></tr>
-              <tr><td>Garden · 2 dives</td><td>Rp1,750,000</td><td>Rp1,950,000</td></tr>
-              <tr><td>Seafront · 2 dives</td><td>Rp1,850,000</td><td>Rp2,150,000</td></tr>
-              <tr><td>Standard Plus · 3 dives</td><td>Rp2,100,000</td><td>Rp2,300,000</td></tr>
-              <tr><td>Garden Plus · 3 dives</td><td>Rp2,200,000</td><td>Rp2,400,000</td></tr>
-              <tr><td>Seafront Plus · 3 dives</td><td>Rp2,300,000</td><td>Rp2,650,000</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <!-- DIVE SITES -->
-    <section class="dive-sites" id="dive-sites">
-      <p class="eyebrow eyebrow-dark">Where we dive</p>
-      <h2>30+ sites, a short boat ride away</h2>
-      <p class="section-intro">
-        We run trips to more than thirty sites around Bunaken, Manado Tua, Siladen, and Manterawu — a mix
-        of dramatic wall dives, gentler slopes, muck diving, and more. The
-        guides pick the day's sites around conditions and your interests.
+    <div class="bungalow-card" style="padding: 1.5rem; background: var(--sand); border: 1px solid rgba(0, 0, 0, 0.08);">
+      <h3 style="color: var(--deep-water); font-size: 1.15rem; margin-bottom: 0.5rem; padding: 0;">House Reef Snorkelling</h3>
+      <p style="color: #3A473F; font-size: 0.95rem; flex-grow: 1; padding: 0 0 1em;">
+        If you fancy taking it chill or simply can’t get enough of the water and fish, step straight off the shore into our house reef. Grab your gear and explore anytime at your own pace.
       </p>
-      <ul class="site-log">
-        <li><span class="site-name">Wall dives</span><span class="site-note">reef sharks, turtles, big schools of fusiliers</span></li>
-        <li><span class="site-name">Slopes &amp; reef</span><span class="site-note">hard &amp; soft coral gardens, mandarinfish at dusk</span></li>
-        <li><span class="site-name">House reef &amp; muck</span><span class="site-note">frogfish, nudibranchs, macro life</span></li>
-        <li><span class="site-name">Current sites</span><span class="site-note">pelagics, schooling barracuda</span></li>
-      </ul>
-      <p class="site-log-note">…and many more.</p>
-      <p class="site-log-note">Upon special arrangement and depending on availability, we can also arrange trips further afield to Bangka or the Lembeh Strait — both well worth the extra distance for divers after something different.</p>
-    </section>
-
-    <!-- OTHER ACTIVITIES -->
-    <section id="activities" style="padding: 5vw 5vw 6vw; background: var(--foam);">
-      <p class="eyebrow eyebrow-dark">Other activities</p>
-      <h2 style="color: var(--deep-water); font-size: clamp(1.6rem, 2.8vw, 2.2rem);">Dolphin swimming tours &amp; snorkelling</h2>
-      <p class="section-intro">
-        Beyond scuba diving, there are plenty of ways to experience Bunaken's waters — whether you want an early morning offshore adventure or a relaxed swim right off the beach.
-      </p>
-
-      <div class="bungalow-grid" style="margin-top: 2em;">
-        <!-- Dolphin Tours -->
-        <div class="bungalow-card" style="padding: 1.5rem; background: var(--sand); border: 1px solid rgba(0, 0, 0, 0.08);">
-          <h3 style="color: var(--deep-water); font-size: 1.15rem; margin-bottom: 0.5rem; padding: 0;">Dolphin Swimming Tours</h3>
-          <p style="color: #3A473F; font-size: 0.95rem; flex-grow: 1; padding: 0 0 1em;">
-            Head out on an early morning boat trip to meet Bunaken’s wild dolphins in open water. Watch them leap along the bow or slip into the water for an unforgettable swim with our cetacean friends.
-          </p>
-          <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--coral); font-weight: 500;">Rp500,000 / person</span>
-        </div>
-
-        <!-- Boat Snorkelling -->
-        <div class="bungalow-card" style="padding: 1.5rem; background: var(--sand); border: 1px solid rgba(0, 0, 0, 0.08);">
-          <h3 style="color: var(--deep-water); font-size: 1.15rem; margin-bottom: 0.5rem; padding: 0;">Boat Snorkelling Trips</h3>
-          <p style="color: #3A473F; font-size: 0.95rem; flex-grow: 1; padding: 0 0 1em;">
-            Join our dive boat excursions to explore the wider marine park. Heading out by boat gives you access to far more varied and vibrant reef sites than staying near the shore.
-          </p>
-          <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--coral); font-weight: 500;">Rp350,000 / person</span>
-        </div>
-
-        <!-- House Reef Snorkelling -->
-        <div class="bungalow-card" style="padding: 1.5rem; background: var(--sand); border: 1px solid rgba(0, 0, 0, 0.08);">
-          <h3 style="color: var(--deep-water); font-size: 1.15rem; margin-bottom: 0.5rem; padding: 0;">House Reef Snorkelling</h3>
-          <p style="color: #3A473F; font-size: 0.95rem; flex-grow: 1; padding: 0 0 1em;">
-            If you fancy taking it chill or simply can’t get enough of the water and fish, step straight off the shore into our house reef. Grab your gear and explore anytime at your own pace.
-          </p>
-          <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--reef-teal); font-weight: 500;">Free for guests</span>
-        </div>
-      </div>
-    </section>
-
-    
-    <!-- CONTACT -->
-    <section class="contact" id="contact">
-      <p class="eyebrow">Book your stay</p>
-      <h2>Message Diana directly</h2>
-      <p class="contact-sub">
-        The booking form is offline while the site's under maintenance — but Diana answers
-        WhatsApp directly and can confirm bungalows and dive packages the same day.
-      </p>
-      <div class="contact-buttons">
-        <a class="btn btn-coral btn-large" href="https://wa.me/6281356409136" target="_blank" rel="noopener">
-          WhatsApp +62 813-5640-9136
-        </a>
-        <a>
-           
-        </a>
-        <a class="btn btn-coral btn-large" href="https://wa.me/6285298771599" target="_blank" rel="noopener">
-          or +62 852-9877-1599
-        </a>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <p>Bunaken Divers Seabreeze Resort &middot; Bunaken Island, Manado, North Sulawesi</p>
-    <p>info@bunakendivers.com</p>
-    <p>&copy; <span id="year"></span> Seabreeze Resort</p>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-
-  <script>
-  const banner = document.querySelector('.maintenance-banner');
-
-  if (banner) {
-      const updateBannerHeight = () => {
-          document.documentElement.style.setProperty(
-              '--banner-height',
-              `${banner.offsetHeight}px`
-          );
-      };
-
-      updateBannerHeight();
-
-      new ResizeObserver(updateBannerHeight).observe(banner);
-  }
-  </script>
-</body>
-</html>
+      <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--reef-teal); font-weight: 500;">Free for guests</span>
+    </div>
+  </div>
+</section>
