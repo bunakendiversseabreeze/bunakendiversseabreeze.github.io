@@ -18,7 +18,10 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--banner-height, 0px);
+}
 
 body {
   margin: 0;
@@ -132,6 +135,19 @@ a { color: inherit; }
 }
 .site-nav nav a:hover { border-bottom-color: var(--coral); }
 .nav-cta { color: var(--coral) !important; font-weight: 600; }
+
+.page-jump-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 1.25rem 2rem;
+}
+
+.page-jump-links a {
+    text-decoration: none;
+    font-weight: 600;
+}
 
 /* ===========================================================
    Hero
