@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% if page.title %}{{ page.title }} — Bunaken Divers Seabreeze Resort{% else %}Bunaken Divers Seabreeze Resort{% endif %}</title>
+<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}Wooden shorefront bungalows and an on-site PADI dive centre on Bunaken Island, North Sulawesi — gateway to Bunaken National Marine Park.{% endif %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- MAINTENANCE BANNER -->
+  <div class="maintenance-banner" role="alert">
+    <p>
+      <strong>Our website is under maintenance at the moment.</strong>
+      Please book directly with Diana Sulangi via WhatsApp:
+      <a href="https://wa.me/6281356409136" target="_blank" rel="noopener">+62 813-5640-9136</a>
+      or
+      <a href="https://wa.me/6285298771599" target="_blank" rel="noopener">+62 852-9877-1599</a>
+    </p>
+  </div>
+
+  <!-- SITE NAVIGATION -->
+  <header class="site-nav">
+    <a class="brand" href="index.html#top">
+      <span class="brand-mark" aria-hidden="true">◐</span>
+      Bunaken Divers <em>Seabreeze</em> Resort
+    </a>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="padi-courses.html">PADI Courses</a>
+      <a href="daily-diving-rentals.html">Daily Diving &amp; Rentals</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    {{ content }}
+
+    <!-- CONTACT CTA -->
+    <section class="contact" id="contact">
+      <p class="eyebrow">Book your stay or dives</p>
+      <h2>Message Diana directly</h2>
+      <p class="contact-sub">
+        The booking form is offline while the site's under maintenance — but Diana answers WhatsApp directly and can confirm bungalows, courses, and dive packages the same day.
+      </p>
+      <div class="contact-buttons">
+        <a class="btn btn-coral btn-large" href="https://wa.me/6281356409136" target="_blank" rel="noopener">
+          WhatsApp +62 813-5640-9136
+        </a>
+        <a class="btn btn-coral btn-large" href="https://wa.me/6285298771599" target="_blank" rel="noopener">
+          or +62 852-9877-1599
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>Bunaken Divers Seabreeze Resort &middot; Bunaken Island, Manado, North Sulawesi</p>
+    <p>info@bunakendivers.com</p>
+    <p>&copy; <span id="year"></span> Seabreeze Resort</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const banner = document.querySelector('.maintenance-banner');
+    if (banner) {
+        const updateBannerHeight = () => {
+            document.documentElement.style.setProperty(
+                '--banner-height',
+                `${banner.offsetHeight}px`
+            );
+        };
+        updateBannerHeight();
+        new ResizeObserver(updateBannerHeight).observe(banner);
+    }
+  </script>
+</body>
+</html>

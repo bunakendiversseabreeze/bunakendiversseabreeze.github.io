@@ -1,227 +1,160 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daily Diving & Equipment Rentals — Bunaken Divers Seabreeze Resort</title>
-<meta name="description" content="Daily boat dives, intro dives, snorkelling, and equipment rental rates at Bunaken Divers Seabreeze Resort.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+---
+layout: default
+title: "Daily Diving & Equipment Rentals"
+description: "Daily boat dives, intro dives, snorkelling, and equipment rental rates at Bunaken Divers Seabreeze Resort."
+---
 
-  <!-- MAINTENANCE BANNER -->
-  <div class="maintenance-banner" role="alert">
-    <p>
-      <strong>Our website is under maintenance at the moment.</strong>
-      Please book directly with Diana Sulangi via WhatsApp:
-      <a href="https://wa.me/6281356409136" target="_blank" rel="noopener">+62 813-5640-9136</a>
-      or
-      <a href="https://wa.me/6285298771599" target="_blank" rel="noopener">+62 852-9877-1599</a>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg" style="background-image:url('images/seafront-view.jpg');"></div>
+  <div class="hero-scrim"></div>
+  <div class="hero-copy">
+    <p class="eyebrow">A La Carte Diving &amp; Gear</p>
+    <h1>Daily Diving &amp; Equipment Rental</h1>
+    <p class="hero-sub">
+      Daily boat dives, introductory scuba experiences, and full gear hire on Bunaken Island.
     </p>
   </div>
+  <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,64 C240,110 480,10 720,48 C960,86 1200,20 1440,58 L1440,120 L0,120 Z"></path>
+  </svg>
+</section>
 
-  <!-- NAV -->
-  <header class="site-nav">
-    <a class="brand" href="index.html#top">
-      <span class="brand-mark" aria-hidden="true">◐</span>
-      Bunaken Divers <em>Seabreeze</em> Resort
-    </a>
-    <nav class="navbar">
-      <a href="index.html">Home</a>
-      <a href="padi-courses.html">PADI Courses</a>
-      <a href="daily-diving-rentals.html">Daily Diving &amp; Rentals</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<!-- RATES SECTION -->
+<section class="rates">
+  <p class="eyebrow eyebrow-dark">Daily Rates</p>
+  <h2>Diving &amp; Equipment Pricing</h2>
 
-  <main id="top">
+  <!-- NOTICE BOX -->
+  <div class="notice-box">
+    <p style="margin-bottom: 0;"><strong>Welcome day-trippers and guests:</strong> You do not have to stay here to do your diving or rent gear with us! Feel free to join our boat trips or rent equipment directly from our dive centre.</p>
+  </div>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-bg" style="background-image:url('images/seafront-view.jpg');"></div>
-      <div class="hero-scrim"></div>
-      <div class="hero-copy">
-        <p class="eyebrow">A La Carte Diving &amp; Gear</p>
-        <h1>Daily Diving &amp; Equipment Rental</h1>
-        <p class="hero-sub">
-          Daily boat dives, introductory scuba experiences, and full gear hire on Bunaken Island.
-        </p>
+  <div class="rate-tables">
+    
+    <!-- DIVING & SNORKELLING TABLE -->
+    <div class="rate-table">
+      <h3>Diving &amp; Snorkelling <span>Per person / day</span></h3>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background: rgba(27, 107, 95, 0.08);">
+              <td colspan="2" style="font-weight: 600; color: var(--deep-water); font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Certified Divers</td>
+            </tr>
+            <tr>
+              <td>1 Boat Day Dive (1 Fun Dive)</td>
+              <td>Rp750,000</td>
+            </tr>
+            <tr>
+              <td>2 Boat Day Dives (2 Fun Dives)</td>
+              <td>Rp1,100,000</td>
+            </tr>
+            <tr>
+              <td>3 Boat Day Dives (3 Fun Dives)</td>
+              <td>Rp1,650,000</td>
+            </tr>
+            <tr>
+              <td>Night / Mandarin Boat Dive <small>(Min. 2 divers, excl. flashlight)</small></td>
+              <td>Rp650,000 <small>(Rp800,000 single diver)</small></td>
+            </tr>
+            <tr>
+              <td>Non-guided House Reef Dives <small>(Min. 2 divers)</small></td>
+              <td>Rp150,000 <small>tank charge</small></td>
+            </tr>
+            <tr style="background: rgba(27, 107, 95, 0.08);">
+              <td colspan="2" style="font-weight: 600; color: var(--deep-water); font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Uncertified Divers &amp; Snorkellers</td>
+            </tr>
+            <tr>
+              <td>Introductory Scuba Dive <small>(Incl. lesson, gear &amp; 1 boat dive)</small></td>
+              <td>Rp1,350,000</td>
+            </tr>
+            <tr>
+              <td>Introductory Scuba Fun Dive* <small>(Incl. gear &amp; 2 boat dives)</small></td>
+              <td>Rp2,000,000</td>
+            </tr>
+            <tr>
+              <td>Join Dive Boat to Snorkel</td>
+              <td>Rp350,000 / trip</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0,64 C240,110 480,10 720,48 C960,86 1200,20 1440,58 L1440,120 L0,120 Z"></path>
-      </svg>
-    </section>
+      
+      <ul style="font-size: 0.82rem; color: #3A473F; margin-top: 1em; padding-left: 1.2em; line-height: 1.5;">
+        <li>Standard fun dive rates apply exclusively to certified divers.</li>
+        <li>Boat dives include tanks, weight belt, and guide.</li>
+        <li>Group sizes: Maximum 4 to 5 guests per guide for certified divers; maximum 2 guests per guide for introductory scuba divers.</li>
+        <li>* <strong>Introductory Scuba Fun Dives</strong> are designed for uncertified divers who have already completed an initial Introductory Scuba Dive (with a briefing lesson) and are returning for further diving.</li>
+        <li>Complimentary fresh fruit, biscuits, mineral water, tea, and coffee are included on all boat trips.</li>
+      </ul>
+    </div>
 
-    <!-- RATES SECTION -->
-    <section class="rates">
-      <p class="eyebrow eyebrow-dark">Daily Rates</p>
-      <h2>Diving &amp; Equipment Pricing</h2>
-
-      <!-- NOTICE BOX -->
-      <div class="notice-box">
-        <p style="margin-bottom: 0;"><strong>Welcome day-trippers and guests:</strong> You do not have to stay here to do your diving or rent gear with us! Feel free to join our boat trips or rent equipment directly from our dive centre.</p>
+    <!-- EQUIPMENT RENTAL TABLE -->
+    <div class="rate-table">
+      <h3>Equipment Rental <span>Per day</span></h3>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Full Scuba Set** <small>(Mask, Fins, BCD, Regulator, Wetsuit)</small></td>
+              <td>Rp350,000</td>
+            </tr>
+            <tr>
+              <td>BCD</td>
+              <td>Rp125,000</td>
+            </tr>
+            <tr>
+              <td>Regulator <small>(incl. alternate and SPG)</small></td>
+              <td>Rp125,000</td>
+            </tr>
+            <tr>
+              <td>Wetsuit</td>
+              <td>Rp100,000</td>
+            </tr>
+            <tr>
+              <td>Diving Computer</td>
+              <td>Rp100,000</td>
+            </tr>
+            <tr>
+              <td>Underwater Flashlight</td>
+              <td>Rp100,000</td>
+            </tr>
+            <tr>
+              <td>Mask, Snorkel &amp; Fins Set</td>
+              <td>Rp100,000 <small>(Rp110,000 w/ full face mask)</small></td>
+            </tr>
+            <tr>
+              <td>Mask</td>
+              <td>Rp40,000 <small>(Rp60,000 full face mask)</small></td>
+            </tr>
+            <tr>
+              <td>Snorkel</td>
+              <td>Rp10,000</td>
+            </tr>
+            <tr>
+              <td>Fins</td>
+              <td>Rp50,000</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-
-      <div class="rate-tables">
-        
-        <!-- DIVING & SNORKELLING TABLE -->
-        <div class="rate-table">
-          <h3>Diving &amp; Snorkelling <span>Per person / day</span></h3>
-          <div class="table-container">
-            <table>
-              <thead>
-                <tr>
-                  <th>Service</th>
-                  <th>Rate</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr style="background: rgba(27, 107, 95, 0.08);">
-                  <td colspan="2" style="font-weight: 600; color: var(--deep-water); font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Certified Divers</td>
-                </tr>
-                <tr>
-                  <td>1 Boat Day Dive (1 Fun Dive)</td>
-                  <td>Rp750,000</td>
-                </tr>
-                <tr>
-                  <td>2 Boat Day Dives (2 Fun Dives)</td>
-                  <td>Rp1,100,000</td>
-                </tr>
-                <tr>
-                  <td>3 Boat Day Dives (3 Fun Dives)</td>
-                  <td>Rp1,650,000</td>
-                </tr>
-                <tr>
-                  <td>Night / Mandarin Boat Dive <small>(Min. 2 divers, excl. flashlight)</small></td>
-                  <td>Rp650,000 <small>(Rp800,000 single diver)</small></td>
-                </tr>
-                <tr>
-                  <td>Non-guided House Reef Dives <small>(Min. 2 divers)</small></td>
-                  <td>Rp150,000 <small>tank charge</small></td>
-                </tr>
-                <tr style="background: rgba(27, 107, 95, 0.08);">
-                  <td colspan="2" style="font-weight: 600; color: var(--deep-water); font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Uncertified Divers &amp; Snorkellers</td>
-                </tr>
-                <tr>
-                  <td>Introductory Scuba Dive <small>(Incl. lesson, gear &amp; 1 boat dive)</small></td>
-                  <td>Rp1,350,000</td>
-                </tr>
-                <tr>
-                  <td>Introductory Scuba Fun Dive* <small>(Incl. gear &amp; 2 boat dives)</small></td>
-                  <td>Rp2,000,000</td>
-                </tr>
-                <tr>
-                  <td>Join Dive Boat to Snorkel</td>
-                  <td>Rp350,000 / trip</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          
-          <ul style="font-size: 0.82rem; color: #3A473F; margin-top: 1em; padding-left: 1.2em; line-height: 1.5;">
-            <li>Standard fun dive rates apply exclusively to certified divers.</li>
-            <li>Boat dives include tanks, weight belt, and guide.</li>
-            <li>Group sizes: Maximum 4 to 5 guests per guide for certified divers; maximum 2 guests per guide for introductory scuba divers.</li>
-            <li>* <strong>Introductory Scuba Fun Dives</strong> are designed for uncertified divers who have already completed an initial Introductory Scuba Dive (with a briefing lesson) and are returning for further diving.</li>
-            <li>Complimentary fresh fruit, biscuits, mineral water, tea, and coffee are included on all boat trips.</li>
-          </ul>
-        </div>
-
-        <!-- EQUIPMENT RENTAL TABLE -->
-        <div class="rate-table">
-          <h3>Equipment Rental <span>Per day</span></h3>
-          <div class="table-container">
-            <table>
-              <thead>
-                <tr>
-                  <th>Item</th>
-                  <th>Rate</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Full Scuba Set** <small>(Mask, Fins, BCD, Regulator, Wetsuit)</small></td>
-                  <td>Rp350,000</td>
-                </tr>
-                <tr>
-                  <td>BCD</td>
-                  <td>Rp125,000</td>
-                </tr>
-                <tr>
-                  <td>Regulator <small>(incl. alternate and SPG)</small></td>
-                  <td>Rp125,000</td>
-                </tr>
-                <tr>
-                  <td>Wetsuit</td>
-                  <td>Rp100,000</td>
-                </tr>
-                <tr>
-                  <td>Diving Computer</td>
-                  <td>Rp100,000</td>
-                </tr>
-                <tr>
-                  <td>Underwater Flashlight</td>
-                  <td>Rp100,000</td>
-                </tr>
-                <tr>
-                  <td>Mask, Snorkel &amp; Fins Set</td>
-                  <td>Rp100,000 <small>(Rp110,000 w/ full face mask)</small></td>
-                </tr>
-                <tr>
-                  <td>Mask</td>
-                  <td>Rp40,000 <small>(Rp60,000 full face mask)</small></td>
-                </tr>
-                <tr>
-                  <td>Snorkel</td>
-                  <td>Rp10,000</td>
-                </tr>
-                <tr>
-                  <td>Fins</td>
-                  <td>Rp50,000</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          
-          <p style="font-size: 0.82rem; color: var(--driftwood); margin-top: 1em; line-height: 1.5;">
-            ** <em>Note: The Full Scuba Set rental includes mask, fins, BCD, and regulator. Please note that an underwater flashlight and dive computer are <strong>not</strong> included in the full set and must be rented separately if required.</em>
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="contact" id="contact">
-      <p class="eyebrow">Book your dive</p>
-      <h2>Message Diana directly</h2>
-      <p class="contact-sub">
-        To reserve day dives, boat slots, or equipment, send a WhatsApp message to Diana.
+      
+      <p style="font-size: 0.82rem; color: var(--driftwood); margin-top: 1em; line-height: 1.5;">
+        ** <em>Note: The Full Scuba Set rental includes mask, fins, BCD, and regulator. Please note that an underwater flashlight and dive computer are <strong>not</strong> included in the full set and must be rented separately if required.</em>
       </p>
-      <div class="contact-buttons">
-        <a class="btn btn-coral btn-large" href="https://wa.me/6281356409136" target="_blank" rel="noopener">
-          WhatsApp +62 813-5640-9136
-        </a>
-        <a> </a>
-        <a class="btn btn-coral btn-large" href="https://wa.me/6285298771599" target="_blank" rel="noopener">
-          or +62 852-9877-1599
-        </a>
-      </div>
-    </section>
+    </div>
 
-  </main>
-
-  <footer class="site-footer">
-    <p>Bunaken Divers Seabreeze Resort &middot; Bunaken Island, Manado, North Sulawesi</p>
-    <p>info@bunakendivers.com</p>
-    <p>&copy; <span id="year"></span> Seabreeze Resort</p>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+  </div>
+</section>
