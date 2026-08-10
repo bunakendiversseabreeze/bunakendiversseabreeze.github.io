@@ -1,136 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{ page.title }} — Bunaken Divers Seabreeze Resort</title>
-<meta name="description" content="{{ page.heading }}">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+---
+layout: default
+---
 
-  <!-- MAINTENANCE BANNER -->
-  <div class="maintenance-banner" role="alert">
-    <p>
-      <strong>Our website is under maintenance at the moment.</strong>
-      Please book directly with Diana Sulangi via WhatsApp:
-      <a href="https://wa.me/6281356409136" target="_blank" rel="noopener">+62 813-5640-9136</a>
-      or
-      <a href="https://wa.me/6285298771599" target="_blank" rel="noopener">+62 852-9877-1599</a>
-    </p>
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-bg" style="background-image:url('{{ page.hero_image }}');"></div>
+  <div class="hero-scrim"></div>
+  <div class="hero-copy">
+    <p class="eyebrow">Accommodation · Seabreeze Resort</p>
+    <h1>{{ page.title }}</h1>
+    <p class="hero-sub">{{ page.price }}</p>
+  </div>
+  <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,64 C240,110 480,10 720,48 C960,86 1200,20 1440,58 L1440,120 L0,120 Z"></path>
+  </svg>
+</section>
+
+<!-- CONTENT SECTION -->
+<section class="about">
+  <div class="about-copy">
+    <p class="eyebrow eyebrow-dark">Room Details</p>
+    <h2>{{ page.heading }}</h2>
+    
+    <!-- Body content from individual room HTML files renders here -->
+    {{ content }}
   </div>
 
-  <!-- SITE NAVIGATION -->
-  <header class="site-nav">
-    <a class="brand" href="index.html#top">
-      <span class="brand-mark" aria-hidden="true">◐</span>
-      Bunaken Divers <em>Seabreeze</em> Resort
-    </a>
-    <nav class="navbar">
-      <a href="index.html">Home</a>
-      <a href="padi-courses.html">PADI Courses</a>
-      <a href="daily-diving-rentals.html">Daily Diving &amp; Rentals</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
-  </header>
+  <!-- SIDEBAR SUMMARY -->
+  <div class="notice-box" style="margin-top: 0;">
+    <h3 style="margin-top: 0; color: var(--deep-water);">Bungalow Summary</h3>
+    <ul style="padding-left: 1.2rem; margin-bottom: 0;">
+      <li><strong>Rate:</strong> {{ page.price }}</li>
+      <li><strong>Meals:</strong> Breakfast, Lunch &amp; Dinner included</li>
+      <li><strong>Drinks:</strong> Free tea, coffee &amp; water around the clock</li>
+      <li><strong>Bathroom:</strong> Ensuite with shower</li>
+      <li><strong>Cooling:</strong> Ceiling fan</li>
+    </ul>
+  </div>
+</section>
 
-  <main id="top">
-
-    <!-- HERO SECTION -->
-    <section class="hero">
-      <div class="hero-bg" style="background-image:url('{{ page.hero_image }}');"></div>
-      <div class="hero-scrim"></div>
-      <div class="hero-copy">
-        <p class="eyebrow">Accommodation · Seabreeze Resort</p>
-        <h1>{{ page.title }}</h1>
-        <p class="hero-sub">{{ page.price }}</p>
-      </div>
-      <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0,64 C240,110 480,10 720,48 C960,86 1200,20 1440,58 L1440,120 L0,120 Z"></path>
-      </svg>
-    </section>
-
-    <!-- CONTENT SECTION -->
-    <section class="about">
-      <div class="about-copy">
-        <p class="eyebrow eyebrow-dark">Room Details</p>
-        <h2>{{ page.heading }}</h2>
-        
-        <!-- The body text from standard-room.html renders here -->
-        {{ content }}
-
-        <h3 style="color: var(--deep-water); margin-top: 1.5em;">What's Included in Your Stay</h3>
-        <p>
-          All room rates operate on a full-board basis. Your nightly booking rate includes:
-        </p>
-        <ul style="color: #3A473F; margin-bottom: 1.5em;">
-          <li>Full cooked breakfast, lunch, and dinner daily in our open-air restaurant.</li>
-          <li>Unlimited fresh drinking water, tea, and brewed local coffee available 24/7.</li>
-          <li>Private ensuite bathroom with a Western toilet and shower.</li>
-          <li>Daily housekeeping and linen change service.</li>
-        </ul>
-
-        <p>
-          Check-in is available from 2:00 PM, and checkout is until 12:00 PM. If you are arriving early on the morning boat, you are welcome to drop off gear and enjoy a meal while your room is prepared.
-        </p>
-      </div>
-
-      <!-- SIDEBAR SUMMARY -->
-      <div class="notice-box" style="margin-top: 0;">
-        <h3 style="margin-top: 0; color: var(--deep-water);">Bungalow Summary</h3>
-        <ul style="padding-left: 1.2rem; margin-bottom: 0;">
-          <li><strong>Rate:</strong> {{ page.price }}</li>
-          <li><strong>Meals:</strong> Breakfast, Lunch &amp; Dinner included</li>
-          <li><strong>Drinks:</strong> Free tea, coffee &amp; water around the clock</li>
-          <li><strong>Bathroom:</strong> Ensuite with shower</li>
-          <li><strong>Cooling:</strong> Ceiling fan</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- PHOTO GALLERY SECTION -->
-    {% if page.gallery %}
-    <section style="padding: 0 5vw 5vw;">
-      <p class="eyebrow eyebrow-dark">Photo Gallery</p>
-      <div class="gallery-grid">
-        {% for img in page.gallery %}
-          <img src="{{ img }}" alt="{{ page.title }} photo" loading="lazy">
-        {% endfor %}
-      </div>
-    </section>
-    {% endif %}
-
-    <!-- CONTACT / BOOKING -->
-    <section class="contact" id="contact">
-      <p class="eyebrow">Book your stay</p>
-      <h2>Message Diana directly</h2>
-      <p class="contact-sub">
-        To check availability for the {{ page.title }}, reach out directly on WhatsApp.
-      </p>
-      <div class="contact-buttons">
-        <a class="btn btn-coral btn-large" href="https://wa.me/6281356409136" target="_blank" rel="noopener">
-          WhatsApp +62 813-5640-9136
-        </a>
-        <a> </a>
-        <a class="btn btn-coral btn-large" href="https://wa.me/6285298771599" target="_blank" rel="noopener">
-          or +62 852-9877-1599
-        </a>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <p>Bunaken Divers Seabreeze Resort &middot; Bunaken Island, Manado, North Sulawesi</p>
-    <p>info@bunakendivers.com</p>
-    <p>&copy; <span id="year"></span> Seabreeze Resort</p>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+<!-- PHOTO GALLERY SECTION -->
+{% if page.gallery %}
+<section style="padding: 0 5vw 5vw;">
+  <p class="eyebrow eyebrow-dark">Photo Gallery</p>
+  <div class="gallery-grid">
+    {% for img in page.gallery %}
+      <img src="{{ img }}" alt="{{ page.title }} photo" loading="lazy">
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
