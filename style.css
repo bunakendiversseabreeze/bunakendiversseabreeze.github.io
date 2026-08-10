@@ -419,17 +419,26 @@ a { color: inherit; }
 .feature-list h3 { font-size: 1.05rem; color: var(--foam); margin-bottom: 0.2em; }
 .feature-list p { font-size: 0.9rem; color: rgba(253, 251, 246, 0.75); margin: 0; }
 
-/* ===========================================================
-   Rates
-   =========================================================== */
-.rates { padding: 5vw 5vw 6vw; }
-.rates h2 { color: var(--deep-water); font-size: clamp(1.6rem, 2.8vw, 2.2rem); }
+/* ==========================================
+   Rates Section & Rate Tables
+   ========================================== */
+
+.rates { 
+  padding: 5vw 5vw 6vw; 
+}
+
+.rates h2 { 
+  color: var(--deep-water); 
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem); 
+}
+
 .rate-tables {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2.5em;
   margin-top: 2em;
 }
+
 .rate-table h3 {
   font-family: var(--font-body);
   font-weight: 600;
@@ -437,6 +446,7 @@ a { color: inherit; }
   color: var(--deep-water);
   margin-bottom: 0.8em;
 }
+
 .rate-table h3 span {
   display: block;
   font-weight: 400;
@@ -444,16 +454,29 @@ a { color: inherit; }
   color: var(--driftwood);
   margin-top: 0.2em;
 }
+
+/* Horizontal scroll container for mobile screens */
+.table-container {
+  overflow-x: auto;
+  margin: 1em 0;
+}
+
+/* Base table styling */
 .rate-table table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.88rem;
 }
-.rate-table th, .rate-table td {
+
+/* Shared cell padding & bottom border */
+.rate-table th, 
+.rate-table td {
   text-align: left;
   padding: 0.65em 0.5em;
   border-bottom: 1px solid #E4D8BC;
 }
+
+/* Header row styling */
 .rate-table th {
   font-family: var(--font-mono);
   font-size: 0.7rem;
@@ -461,9 +484,23 @@ a { color: inherit; }
   color: var(--reef-teal);
   text-transform: uppercase;
   font-weight: 500;
+  background-color: rgba(0, 0, 0, 0.03);
 }
-.rate-table td:not(:first-child) { font-family: var(--font-mono); color: #3A473F; }
-.rate-table tbody tr:hover { background: rgba(27, 107, 95, 0.06); }
+
+/* Data cells */
+.rate-table td:not(:first-child) { 
+  font-family: var(--font-mono); 
+  color: #3A473F; 
+}
+
+/* Row states: Zebra striping and hover */
+.rate-table tbody tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.rate-table tbody tr:hover { 
+  background-color: rgba(27, 107, 95, 0.06); 
+}
 
 /* ===========================================================
    Dive sites
