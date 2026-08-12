@@ -60,8 +60,83 @@ layout: default
   <p class="eyebrow eyebrow-dark">Photo Gallery</p>
   <div class="gallery-grid">
     {% for img in page.gallery %}
-      <img src="{{ img }}" alt="{{ page.title }} photo" loading="lazy">
+      <img src="{{ img }}" alt="{{ page.title }} photo" loading="lazy" class="gallery-thumb" tabindex="0">
     {% endfor %}
   </div>
 </section>
+
+<!-- FULLSCREEN LIGHTBOX -->
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Photo view">
+  <button class="lightbox-close" aria-label="Close fullscreen view">&times;</button>
+  <button class="lightbox-btn lightbox-prev" aria-label="Previous photo">&#10094;</button>
+  <div class="lightbox-content">
+    <img id="lightbox-img" src="" alt="Enlarged photo">
+  </div>
+  <button class="lightbox-btn lightbox-next" aria-label="Next photo">&#10095;</button>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const images = Array.from(document.querySelectorAll('.gallery-thumb'));
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.lightbox-close');
+    const prevBtn = document.querySelector('.lightbox-prev');
+    const nextBtn = document.querySelector('.lightbox-next');
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      currentIndex = index;
+      lightboxImg.src = images[currentIndex].src;
+      lightboxImg.alt = images[currentIndex].alt;
+      lightbox.classList.add('active');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    function showNext() {
+      currentIndex = (currentIndex + 1) % images.length;
+      lightboxImg.src = images[currentIndex].src;
+      lightboxImg.alt = images[currentIndex].alt;
+    }
+
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      lightboxImg.src = images[currentIndex].src;
+      lightboxImg.alt = images[currentIndex].alt;
+    }
+
+    images.forEach((img, idx) => {
+      img.addEventListener('click', () => openLightbox(idx));
+      img.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openLightbox(idx);
+        }
+      });
+    });
+
+    closeBtn.addEventListener('click', closeLightbox);
+    nextBtn.addEventListener('click', showNext);
+    prevBtn.addEventListener('click', showPrev);
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') showNext();
+      if (e.key === 'ArrowLeft') showPrev();
+    });
+  });
+</script>
 {% endif %}
+
