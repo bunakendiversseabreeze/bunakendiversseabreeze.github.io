@@ -179,7 +179,7 @@ description: "Request a booking at Seabreeze Resort — wooden shorefront bungal
 
         if (result.result === 'success') {
           form.reset();
-          showStatus('Thanks! Your request has been sent — check your email for confirmation, we\'ll follow up shortly.', 'success');
+          showStatus('Thanks! Your request has been sent — check your email (including your spam folder) for confirmation, we\'ll follow up shortly.', 'success');
         } else {
           showStatus(result.message || 'Something went wrong. Please try again, or message us on WhatsApp.', 'error');
         }
