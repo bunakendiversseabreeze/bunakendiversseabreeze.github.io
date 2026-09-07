@@ -122,6 +122,19 @@ description: "Request a booking at Seabreeze Resort — wooden shorefront bungal
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) errors.push('Please enter a valid email address.');
     if (!data.checkin) errors.push('Please choose a check-in date.');
     if (!data.checkout) errors.push('Please choose a check-out date.');
+    if (data.checkin) {
+      var today = new Date();
+      today.setHours(0, 0, 0, 0);
+      var checkinDate = new Date(data.checkin + 'T00:00:00');
+      var msPerDay = 24 * 60 * 60 * 1000;
+      var daysUntilCheckin = Math.round((checkinDate - today) / msPerDay);
+
+      if (daysUntilCheckin < 0) {
+        errors.push('Check-in date can\'t be in the past. Please choose a valid date.');
+      } else if (daysUntilCheckin <= 1) {
+        errors.push('For check-ins this soon, please contact us directly on <a href="' + WHATSAPP_URL + '" target="_blank" rel="noopener" style="color: var(--reef-teal); font-weight: 700;">WhatsApp</a> so we can confirm availability in time.');
+      }
+    }
     if (data.checkin && data.checkout && new Date(data.checkout) <= new Date(data.checkin)) {
       errors.push('Check-out date must be after check-in date.');
     }
