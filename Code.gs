@@ -173,12 +173,14 @@ function sendGuestEmail_(data) {
     'Check-in: ' + data.checkin + '\n' +
     'Check-out: ' + data.checkout + '\n' +
     'Guests: ' + data.guests + '\n' +
-    'Room preference: ' + (data.room || 'Not specified') + '\n\n' +
-    'This is a request, not a confirmed booking \u2014 we check availability and reply by email, ' +
+    'Room preference: ' + (data.room || 'Not specified') + '\n' +
+    'Message: "' + (data.message || 'None') + '"\n\n' +
+    'This is a request, not a confirmed booking \u2014 we will check availability and reply by email, ' +
     'usually within 24 hours.\n\n' +
-    'If it\u2019s urgent, message us directly on WhatsApp: https://wa.me/6281356409136\n\n' +
+    'If it\u2019s urgent, message us directly on WhatsApp: +6281356409136\n\n' +
     'See you on Bunaken!\n' +
-    'Seabreeze Resort';
+    'Seabreeze Resort\n' +
+    'https://bunakendiversseabreeze.github.io/index.html';
 
   MailApp.sendEmail({
     to: data.email,
