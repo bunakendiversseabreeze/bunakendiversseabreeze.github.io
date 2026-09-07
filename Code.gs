@@ -167,6 +167,8 @@ function sendOwnerEmail_(data) {
 
 function sendGuestEmail_(data) {
   var subject = 'We\u2019ve received your booking request \u2014 Seabreeze Resort';
+  
+  // Plain-text fallback
   var body =
     'Hi ' + data.name + ',\n\n' +
     'Thanks for your booking request at Seabreeze Resort! Here\u2019s what you sent us:\n\n' +
@@ -182,11 +184,38 @@ function sendGuestEmail_(data) {
     'Seabreeze Resort\n' +
     'https://bunakendiversseabreeze.github.io/index.html';
 
+  // HTML version with clickable links
+  var htmlBody =
+    '<p>Hi ' + data.name + ',</p>' +
+    
+    '<p>Thanks for your booking request at Seabreeze Resort! Here\u2019s what you sent us:</p>' +
+    
+    '<p>' +
+    '<strong>Check-in:</strong> ' + data.checkin + '<br>' +
+    '<strong>Check-out:</strong> ' + data.checkout + '<br>' +
+    '<strong>Guests:</strong> ' + data.guests + '<br>' +
+    '<strong>Room preference:</strong> ' + (data.room || 'Not specified') + '<br>' +
+    '<strong>Message:</strong> "' + (data.message || 'None') + '"' +
+    '</p>' +
+    
+    '<p>This is a request, not a confirmed booking \u2014 we will check availability and reply by email, ' +
+    'usually within 24 hours.</p>' +
+    
+    '<p>If it\u2019s urgent, message us directly on ' +
+    '<a href="https://wa.me/6281356409136">WhatsApp: +6281356409136</a>.</p>' +
+    
+    '<p>See you on Bunaken!</p>' +
+    
+    '<p>' +
+    '<a href="https://bunakendiversseabreeze.github.io/index.html"><strong>Seabreeze Resort</strong></a>' +
+    '</p>';
+
   MailApp.sendEmail({
     to: data.email,
     replyTo: OWNER_EMAIL,
     subject: subject,
-    body: body
+    body: body,
+    htmlBody: htmlBody
   });
 }
 
