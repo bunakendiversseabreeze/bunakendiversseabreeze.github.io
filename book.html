@@ -54,8 +54,29 @@ description: "Request a booking at Seabreeze Resort — wooden shorefront bungal
       </div>
       <div>
         <label for="guests" style="display: block; color: var(--deep-water); font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4em;">Guests *</label>
-        <input type="number" id="guests" name="guests" min="1" max="20" required
+        <select id="guests" name="guests" required
           style="width: 100%; padding: 0.7em 0.9em; border: 1px solid rgba(13, 59, 54, 0.25); border-radius: 4px; font-family: inherit; font-size: 0.95rem; background: var(--foam);">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+        </select>
       </div>
     </div>
 
@@ -132,15 +153,11 @@ description: "Request a booking at Seabreeze Resort — wooden shorefront bungal
       if (daysUntilCheckin < 0) {
         errors.push('Check-in date can\'t be in the past. Please choose a valid date.');
       } else if (daysUntilCheckin <= 1) {
-        errors.push('For check-ins this soon, please contact us directly on <a href="' + WHATSAPP_URL + '" target="_blank" rel="noopener" style="color: var(--reef-teal); font-weight: 700;">WhatsApp</a> so we can confirm availability in time.');
+        errors.push('For check-ins this soon, please contact us directly on <a href="' + WHATSAPP_URL + '" target="_blank" rel="noopener" style="color: var(--reef-teal); font-weight: 700;">WhatsApp (+6281356409136)</a> so we can confirm availability in time.');
       }
     }
     if (data.checkin && data.checkout && new Date(data.checkout) <= new Date(data.checkin)) {
       errors.push('Check-out date must be after check-in date.');
-    }
-    var guests = Number(data.guests);
-    if (!Number.isInteger(guests) || guests < 1 || guests > 20) {
-      errors.push('Number of guests must be a whole number between 1 and 20.');
     }
     return errors;
   }
