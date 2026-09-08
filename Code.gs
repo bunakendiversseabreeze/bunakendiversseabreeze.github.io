@@ -176,7 +176,7 @@ function sendGuestEmail_(data) {
     'Check-out: ' + data.checkout + '\n' +
     'Guests: ' + data.guests + '\n' +
     'Room preference: ' + (data.room || 'Not specified') + '\n' +
-    'Message: "' + (data.message || 'None') + '"\n\n' +
+    'Message: ' + (('"' + data.message + '"') || 'None') + '\n\n' +
     'This is a request, not a confirmed booking \u2014 we will check availability and reply by email, ' +
     'usually within 24 hours.\n\n' +
     'If it\u2019s urgent, message us directly on WhatsApp: +6281356409136\n\n' +
@@ -195,7 +195,7 @@ function sendGuestEmail_(data) {
     '<strong>Check-out:</strong> ' + data.checkout + '<br>' +
     '<strong>Guests:</strong> ' + data.guests + '<br>' +
     '<strong>Room preference:</strong> ' + (data.room || 'Not specified') + '<br>' +
-    '<strong>Message:</strong> "' + (data.message || 'None') + '"' +
+    '<strong>Message:</strong> "' + (('"' + data.message '"') || 'None') + '"' +
     '</p>' +
     
     '<p>This is a request, not a confirmed booking \u2014 we will check availability and reply by email, ' +
