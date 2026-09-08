@@ -31,7 +31,7 @@
  * CORS error even though the emails would technically have sent.
  */
 
-var OWNER_EMAIL = 'bookings@example.com'; // TODO: replace with your real address
+var OWNER_EMAIL = 'info@bunakendivers.com'; // TODO: replace with your real address
 var SHEET_NAME = 'Bookings';
 var GUEST_COUNT_MAX = 20;
 
