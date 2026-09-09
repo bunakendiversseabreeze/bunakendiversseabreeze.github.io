@@ -133,15 +133,27 @@ function logToSheet_(data) {
   }
   sheet.appendRow([
     new Date(),
-    data.name,
-    data.email,
-    data.phone || '',
+    sheetSafe_(data.name),
+    sheetSafe_(data.email),
+    sheetSafe_(data.phone || ''),
     data.checkin,
     data.checkout,
     data.guests,
-    data.room || '',
-    data.message || ''
+    sheetSafe_(data.room || ''),
+    sheetSafe_(data.message || '')
   ]);
+}
+
+// Prevents Sheets from interpreting user input as a formula. If a value
+// starts with =, +, -, or @, Sheets may try to evaluate it (formula
+// injection). Prefixing with an apostrophe forces it to be treated as
+// plain text; Sheets hides the leading apostrophe in the display.
+function sheetSafe_(value) {
+  var str = String(value);
+  if (/^[=+\-@]/.test(str)) {
+    return "'" + str;
+  }
+  return str;
 }
 
 function sendOwnerEmail_(data) {
@@ -186,16 +198,16 @@ function sendGuestEmail_(data) {
 
   // HTML version with clickable links
   var htmlBody =
-    '<p>Hi ' + data.name + ',</p>' +
+    '<p>Hi ' + escapeHtml_(data.name) + ',</p>' +
     
     '<p>Thanks for your booking request at Seabreeze Resort! Here\u2019s what you sent us:</p>' +
     
     '<p>' +
-    '<strong>Check-in:</strong> ' + data.checkin + '<br>' +
-    '<strong>Check-out:</strong> ' + data.checkout + '<br>' +
-    '<strong>Guests:</strong> ' + data.guests + '<br>' +
-    '<strong>Room preference:</strong> ' + (data.room || 'Not specified') + '<br>' +
-    '<strong>Message:</strong> ' + (data.message || 'None') +
+    '<strong>Check-in:</strong> ' + escapeHtml_(data.checkin) + '<br>' +
+    '<strong>Check-out:</strong> ' + escapeHtml_(data.checkout) + '<br>' +
+    '<strong>Guests:</strong> ' + escapeHtml_(data.guests) + '<br>' +
+    '<strong>Room preference:</strong> ' + escapeHtml_(data.room || 'Not specified') + '<br>' +
+    '<strong>Message:</strong> ' + escapeHtml_(data.message || 'None') +
     '</p>' +
     
     '<p>This is a request, not a confirmed booking \u2014 we will check availability and reply by email, ' +
@@ -217,6 +229,17 @@ function sendGuestEmail_(data) {
     body: body,
     htmlBody: htmlBody
   });
+}
+
+// Escapes HTML special characters so user input can't inject tags/attributes
+// (e.g. <img onerror=...>) into the HTML confirmation email.
+function escapeHtml_(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
 }
 
 function respond_(obj) {
