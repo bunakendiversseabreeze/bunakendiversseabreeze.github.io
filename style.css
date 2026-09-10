@@ -125,7 +125,11 @@ a { color: inherit; }
   gap: 0.4em;
 }
 .brand em { font-style: italic; color: var(--coral); }
-.brand-mark { color: var(--reef-teal); }
+.brand-logo {
+  height: 2.25rem;
+  width: auto;
+  border-radius: 6px;
+}
 .site-nav nav { display: flex; gap: 1.3em; flex-wrap: wrap; }
 .site-nav nav a {
   text-decoration: none;
