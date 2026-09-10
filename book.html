@@ -4,7 +4,20 @@ title: "Book Now"
 description: "Request a booking at Seabreeze Resort — wooden shorefront bungalows and an on-site PADI dive centre on Bunaken Island."
 ---
 
-<!-- BOOKING REQUEST -->
+<!-- SIRVOY BOOKING ENGINE -->
+<section class="booking" style="padding: 6vw 5vw 3vw; max-width: 720px; margin: 0 auto;">
+  <p class="eyebrow eyebrow-dark">Book Now</p>
+  <h2 style="color: var(--deep-water); font-size: clamp(1.6rem, 2.8vw, 2.2rem);">Book your stay</h2>
+  <script async data-form-id="bb7a2be1b31dd301" src="https://secured.sirvoy.com/widget/sirvoy.js"></script>
+</section>
+
+<!-- ===========================================================
+     OLD BOOKING REQUEST FORM — disabled while testing the Sirvoy
+     booking engine above. To restore: delete the Sirvoy section
+     above and remove this comment wrapper.
+     =========================================================== -->
+<!--
+BOOKING REQUEST (original form)
 <section class="booking" style="padding: 6vw 5vw 3vw; max-width: 720px; margin: 0 auto;">
   <p class="eyebrow eyebrow-dark">Book Now</p>
   <h2 style="color: var(--deep-water); font-size: clamp(1.6rem, 2.8vw, 2.2rem);">Request a booking</h2>
@@ -16,7 +29,7 @@ description: "Request a booking at Seabreeze Resort — wooden shorefront bungal
 
   <form id="booking-form" novalidate style="margin-top: 2rem; display: grid; gap: 1.25rem;">
 
-    <!-- Honeypot field — hidden from real visitors, often auto-filled by bots -->
+    Honeypot field — hidden from real visitors, often auto-filled by bots
     <div style="position: absolute; left: -9999px; top: -9999px; opacity: 0;" aria-hidden="true">
       <label for="company">Company</label>
       <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
@@ -238,3 +251,5 @@ description: "Request a booking at Seabreeze Resort — wooden shorefront bungal
   });
 })();
 </script>
+-->
+
