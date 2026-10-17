@@ -251,7 +251,7 @@ description: "Request a booking at Seabreeze Resort — wooden shorefront bungal
     // 2. Also post to test endpoint (non-blocking / fire-and-forget)
     fetch(TEST_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
       body: JSON.stringify(data)
     }).catch(function (testErr) {
       console.warn('Test endpoint submission failed:', testErr);
